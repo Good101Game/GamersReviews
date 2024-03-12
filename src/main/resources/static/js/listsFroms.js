@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "/lists/getAll",
+        url: "/lists/getAllLists",
         success: function (lists) {
             const listsTable = $("#listsTable");
             lists.forEach(function (Lists) {
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "/Lists/addList",
+            url: "/Lists/addLists",
             contentType: "application/json",
             data: JSON.stringify(list),
             success: function () {

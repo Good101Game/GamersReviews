@@ -17,6 +17,7 @@ public class Games implements Serializable {
     private Review[] reviews;
     @Transient
     private Genre[] genres;
+    private double stars;
 
     public Games() {
 
@@ -70,12 +71,26 @@ public class Games implements Serializable {
         this.genres = genres;
     }
 
-    public Games(Long gid, String gname, String realese_date, String imageUrl, Review[] reviews, Genre[] genres) {
+    public double getStars() {
+        return stars;
+    }
+
+    public Games(Long gid, String gname, String realese_date, String imageUrl, Review[] reviews, Genre[] genres, double stars) {
         Gid = gid;
         Gname = gname;
         this.realese_date = realese_date;
         this.imageUrl = imageUrl;
         this.reviews = reviews;
         this.genres = genres;
+        this.stars = stars;
+    }
+    private void setStars()
+    {
+        double stars = 0;
+        for(int i = 0; i < reviews.length; i++)
+        {
+            stars += reviews[i].getStars();
+        }
+        this.stars = (stars/ reviews.length);
     }
 }

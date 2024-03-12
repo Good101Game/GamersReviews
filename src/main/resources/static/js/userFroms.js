@@ -16,7 +16,7 @@
     }
     $.ajax({
     type: "GET",
-    url: "/users/getAll",
+    url: "/users/getAllUsers",
     success: function (users) {
     const usersList = $("#usersList");
     users.forEach(function (users) {
@@ -69,7 +69,7 @@
     function findUserById(id) {
     $.ajax({
         type: "Get",
-        url: "/user/findUserId/"+id,
+        url: "/user/findUserById/"+id,
         success: function (user) {
             alert("find user successfully id="+user.id);
             window.location.href = "/profile.html?id="+user.id;//+ encodeURIComponent(user.id);

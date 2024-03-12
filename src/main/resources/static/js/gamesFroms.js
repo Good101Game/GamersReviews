@@ -7,14 +7,14 @@ $(document).ready(function () {
             "<td>" + game.realese_date + "</td>" +
             "<td>" + game.imageUrl + "</td>" +
             "<td>" +
-            "<button onclick='findGameById(" + game.Gid + ")'>" + "Details" + "</button>" +
+            "<button onclick='findGamesById(" + game.Gid + ")'>" + "Details" + "</button>" +
             "</td>" +
             "</tr>");
     }
 
     $.ajax({
         type: "GET",
-        url: "/Games/getAll", // Assuming this endpoint returns all games
+        url: "/Games/getAllGames", // Assuming this endpoint returns all games
         success: function (Games) {
             // Iterate through the games and display them in the table
             const gamesList = $("#gamesList");
@@ -55,7 +55,7 @@ $(document).ready(function () {
 function findGameById(id) {
     $.ajax({
         type: "GET",
-        url: "/Games/findGameById/" + id, // Assuming this endpoint finds a game by ID
+        url: "/Games/findGamesById/" + id, // Assuming this endpoint finds a game by ID
         success: function (game) {
             alert("Found game successfully with ID=" + game.Gid);
             // Redirect or perform actions as needed

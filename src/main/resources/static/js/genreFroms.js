@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "/Genre/getAll",
+        url: "/Genre/getAllGenre",
         success: function (genres) {
             const genresList = $("#GenresList");
             genres.forEach(function (genre) {
@@ -47,7 +47,7 @@ $(document).ready(function () {
 function findGenreById(name) {
     $.ajax({
         type: "GET",
-        url: "/genres/findGenreByName/" + name,
+        url: "/genres/findGenreById/" + name,
         success: function (genre) {
             alert("Genre found successfully: " + genre.name);
             // You can redirect to a page to display the games related to this genre
