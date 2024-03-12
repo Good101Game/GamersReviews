@@ -18,7 +18,6 @@
     type: "GET",
     url: "/users/getAll",
     success: function (users) {
-    // Iterate through the products and display them in the table
     const usersList = $("#usersList");
     users.forEach(function (users) {
     usersList.append("<tr>" +
