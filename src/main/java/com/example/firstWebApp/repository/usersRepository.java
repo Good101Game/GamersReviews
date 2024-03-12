@@ -1,9 +1,9 @@
 package com.example.firstWebApp.repository;
 
-import com.example.firstWebApp.entities.reference.user;
+import com.example.firstWebApp.entities.users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface userRepository extends JpaRepository<user,Long> {
+public interface usersRepository extends JpaRepository<users,Long> {
 }
