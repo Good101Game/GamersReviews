@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 
     function addRow(list) {
-        $("#listsTable").append("<tr>" +
+        $("#listsTable").append("<tr><td>" + list.lId + "</td>" +
             "<td>" + list.playing + "</td>" +
             "<td>" + list.completed + "</td>" +
             "<td>" + list.on_hold + "</td>" +

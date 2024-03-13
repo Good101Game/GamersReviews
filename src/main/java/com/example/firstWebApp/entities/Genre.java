@@ -9,12 +9,21 @@ public class Genre implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long Id;
     private String name;
     @Transient
     private Games[] games;
 
     public Genre() {
 
+    }
+
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(long id) {
+        Id = id;
     }
 
     public String getName() {
@@ -33,7 +42,8 @@ public class Genre implements Serializable
         this.games = games;
     }
 
-    public Genre(String name, Games[] games) {
+    public Genre(long id, String name, Games[] games) {
+        Id = id;
         this.name = name;
         this.games = games;
     }

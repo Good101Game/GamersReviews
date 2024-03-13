@@ -15,18 +15,18 @@ public class ListsController {
     @Autowired
     private ListsServices listServices;
 
-    @PostMapping("/users")
+    @PostMapping("/Lists")
     public Lists list(@RequestBody Lists l) {
         return listServices.addLists(l);
     }
 
-    @GetMapping("/users")
-    public List<Lists> getAllUsers() {
+    @GetMapping("/Lists")
+    public List<Lists> getAllLists() {
         return listServices.getAllLists();
     }
 
-    @GetMapping("/users/{id}")
-    public Optional<Lists> findUserById(@PathVariable Long id) {
+    @GetMapping("/Lists/{id}")
+    public Optional<Lists> findListsById(@PathVariable Long id) {
         return listServices.findListsById(id);
     }
 }

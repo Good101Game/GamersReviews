@@ -10,6 +10,7 @@ public class Lists implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long lId;
     @Transient
     private Games[] playing;
     @Transient
@@ -65,7 +66,16 @@ public class Lists implements Serializable {
         this.want_to_play = want_to_play;
     }
 
-    public Lists(Games[] playing, Games[] completed, Games[] on_hold, Games[] dropped, Games[] want_to_play) {
+    public long getlId() {
+        return lId;
+    }
+
+    public void setlId(long lId) {
+        this.lId = lId;
+    }
+
+    public Lists(Long lId, Games[] playing, Games[] completed, Games[] on_hold, Games[] dropped, Games[] want_to_play) {
+        this.lId = lId;
         this.playing = playing;
         this.completed = completed;
         this.on_hold = on_hold;

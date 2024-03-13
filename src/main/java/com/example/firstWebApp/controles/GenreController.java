@@ -13,18 +13,18 @@ public class GenreController {
     @Autowired
     private GenreServices genreServices;
 
-    @PostMapping("/Games")
-    public Genre addGame(@RequestBody Genre g) {
+    @PostMapping("/Genre")
+    public Genre addGenre(@RequestBody Genre g) {
         return genreServices.addGenre(g);
     }
 
-    @GetMapping("/Games")
-    public List<Genre> getAllGames() {
+    @GetMapping("/Genre")
+    public List<Genre> getAlGenre() {
         return genreServices.getAllGenre();
     }
 
-    @GetMapping("/Games/{id}")
-    public Optional<Genre> findGamesById(@PathVariable Long id) {
+    @GetMapping("/Genre/{id}")
+    public Optional<Genre> findGenreById(@PathVariable Long id) {
         return genreServices.findGenreById(id);
     }
 }
