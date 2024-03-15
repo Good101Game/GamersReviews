@@ -9,11 +9,19 @@ public class users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
+    private String Name;
     private String  email;
+    private String password;
 
     public users() {
 
+    }
+
+    public users(Long id, String Name, String email, String password) {
+        this.id = id;
+        this.Name = Name;
+        this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
@@ -24,12 +32,12 @@ public class users implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String Name) {
+        this.Name = Name;
     }
 
     public String getEmail() {
@@ -40,10 +48,11 @@ public class users implements Serializable {
         this.email = email;
     }
 
-    public users(Long id, String firstName, String email) {
-        this.id = id;
-        this.firstName = firstName;
-        this.email = email;
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

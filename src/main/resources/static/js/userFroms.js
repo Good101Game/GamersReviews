@@ -5,10 +5,9 @@
 
     function addRow(user) {
         $("#usersList").append("<tr><td>" + user.id + "</td>" +
-            "<td>" + user.firstName +
-            "</td><td>" + user.secondName + "</td>" +
-            "<td>"+user.email+"</td>" +"<td>"+user.address+"</td>"+
-            "<td>"+user.phoneNumber+"</td>"+
+            "<td>" + user.Name +
+            "<td>"+user.email+"</td>" +
+            "<td>"+user.password+"</td>"+
             "<td>" +
             "<button onclick='findUserById(" + user.id + ")'>" + "Profile" + "</button>" +
             "</td>"+
@@ -22,11 +21,9 @@
     users.forEach(function (users) {
     usersList.append("<tr>" +
     "<td>" + users.id + "</td>"
-    +"<td>"+ users.firstName + "</td>"
-    +"<td>"+ users.secondName +"</td>"+
-    "<td>"+ users.email+"</td>"+
-    "<td>"+users.address+"</td>"
-    +"<td>"+ users.phoneNumber+ "</td>"+
+    "<td>" + user.Name +
+    "<td>"+user.email+"</td>" +
+    "<td>"+user.password+"</td>"+
     "<td>" +
     "<button onclick='findUserById(" + users.id + ")'>" + "Profile" + "</button>" +
     "</td>"
@@ -41,11 +38,9 @@
     $("#userForm").submit(function (event) {
     event.preventDefault();
     let user = {
-    firstName: $("#firstName").val(),
-    secondName: $("#secondName").val(),
+    firstName: $("#Name").val(),
     email: $("#email").val(),
-    address: $("#address").val(),
-    phoneNumber: $("#phoneNumber").val()
+    password: $("#password").val()
 };
 
     $.ajax({
