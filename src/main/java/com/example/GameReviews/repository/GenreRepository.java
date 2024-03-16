@@ -1,6 +1,6 @@
-package com.example.firstWebApp.repository;
+package com.example.GameReviews.repository;
 
-import com.example.firstWebApp.entities.Genre;
+import com.example.GameReviews.entities.Genre;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package com.example.firstWebApp.controles;
+package com.example.GameReviews.controles;
 
-import com.example.firstWebApp.services.ReviewServices;
-import com.example.firstWebApp.entities.Review;
+import com.example.GameReviews.services.ReviewServices;
+import com.example.GameReviews.entities.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.example.firstWebApp;
+package com.example.GameReviews;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

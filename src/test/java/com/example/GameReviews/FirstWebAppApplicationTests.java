@@ -1,4 +1,4 @@
-package com.example.firstWebApp;
+package com.example.GameReviews;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

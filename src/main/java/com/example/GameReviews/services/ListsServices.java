@@ -1,7 +1,7 @@
-package com.example.firstWebApp.services;
+package com.example.GameReviews.services;
 
-import com.example.firstWebApp.entities.Lists;
-import com.example.firstWebApp.repository.ListsRepository;
+import com.example.GameReviews.entities.Lists;
+import com.example.GameReviews.repository.ListsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

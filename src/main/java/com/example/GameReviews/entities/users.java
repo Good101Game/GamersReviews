@@ -1,4 +1,4 @@
-package com.example.firstWebApp.entities;
+package com.example.GameReviews.entities;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
