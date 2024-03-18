@@ -25,4 +25,13 @@ public class usersServices {
     public Optional<users> findUserById(Long id) {
         return userRepository.findById(id);
     }
+    public users login(String email ,String password){
+        System.out.println("email:  "+email+" password: "+password);
+        List<users> all=getAllUsers();
+        for(int i=0 ; i < all.size() ; i++){
+            users a= all.get(i);
+            if (a.getPassword().equals(password) && a.getEmail().equals(email))  return a;
+        }
+        return new users();
+    }
 }

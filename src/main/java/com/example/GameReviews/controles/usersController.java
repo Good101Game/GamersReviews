@@ -20,7 +20,7 @@ public class usersController {
         return userService.addUser(u);
     }
 
-    @GetMapping("/users")
+    @GetMapping("/users/get00")
     public List<users> getAllUsers() {
         return userService.getAllUsers();
     }
@@ -28,5 +28,11 @@ public class usersController {
     @GetMapping("/users/{id}")
     public Optional<users> findUserById(@PathVariable Long id) {
         return userService.findUserById(id);
+    }
+    @PostMapping("/users/login")
+    public @ResponseBody users login(@RequestBody users u) {
+        System.out.println(u);
+
+        return userService.login(u.getEmail(), u.getPassword());
     }
 }
