@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
-public class users implements Serializable {
+public class user implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,12 +13,13 @@ public class users implements Serializable {
     private String  email;
     private String password;
 
-    public users() {
+    public user() {
 
     }
 
-    public users(Long id, String Name, String email, String password) {
-        this.id = id;
+
+    public user(String Name, String email, String password) {
+
         this.Name = Name;
         this.email = email;
         this.password = password;
@@ -36,7 +37,7 @@ public class users implements Serializable {
         return Name;
     }
 
-    public void setFirstName(String Name) {
+    public void setName(String Name) {
         this.Name = Name;
     }
 

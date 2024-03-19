@@ -3,7 +3,7 @@
     $(document).ready(function () {
     // Fetch data using AJAX
 
-    function addRow(user) {
+   /* function addRow(user) {
         $("#usersList").append("<tr><td>" + user.id + "</td>" +
             "<td>" + user.Name +
             "<td>"+user.email+"</td>" +
@@ -33,12 +33,37 @@
     error: function (error) {
     console.error("Error fetching product data: ", error);
 }
-});
+});*/
+        $("#userForms").submit(function (event) {
+            event.preventDefault();
+            let newUser = {
+                Name: $("#Name").val(),
+                email: $("#email").val(),
+                password: $("#password").val()
+            };
+            $.ajax({
+                type: "POST",
+                url: "/users/Sign_up",
+                contentType: "application/json",
+                data: JSON.stringify(newUser),
+                success: function (newUser) {
+                    if (newUser == null || newUser.password == null) {
+                        alert("Failed to sign up. Please check your details and try again.");
+                    } else {
+                        alert("User signed up successfully!");
+                        window.location.href = "/Home.html";
+                    }
+                },
+                error: function (error) {
+                    console.log("Error signing up: ", error);
+                }
+            });
+        });
 
-    $("#userForm").submit(function (event) {
+    $("#userFrom").submit(function (event) {
     event.preventDefault();
     let user = {
-    firstName: $("#Name").val(),
+    Name: $("#Name").val(),
     email: $("#email").val(),
     password: $("#password").val()
 };
@@ -64,7 +89,7 @@
     function findUserById(id) {
     $.ajax({
         type: "Get",
-        url: "/user/findUserById/"+id,
+        url: "/users/findUserById"+id,
         success: function (user) {
             alert("find user successfully id="+user.id);
             window.location.href = "/profile.html?id="+user.id;//+ encodeURIComponent(user.id);

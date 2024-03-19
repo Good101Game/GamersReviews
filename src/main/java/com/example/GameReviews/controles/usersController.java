@@ -1,7 +1,7 @@
 package com.example.GameReviews.controles;
 
 import com.example.GameReviews.services.usersServices;
-import com.example.GameReviews.entities.users;
+import com.example.GameReviews.entities.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,24 +15,32 @@ public class usersController {
     @Autowired
     private usersServices userService;
 
-    @PostMapping("/users")
-    public users addUser(@RequestBody users u) {
+    @PostMapping("/users/addUser")
+    public user addUser(@RequestBody user u) {
         return userService.addUser(u);
     }
 
-    @GetMapping("/users/get00")
-    public List<users> getAllUsers() {
+    @GetMapping("/users/getAllUsers")
+    public List<user> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/users/{id}")
-    public Optional<users> findUserById(@PathVariable Long id) {
+    @GetMapping("/users/findUserById")
+    public Optional<user> findUserById(@PathVariable Long id) {
         return userService.findUserById(id);
     }
     @PostMapping("/users/login")
-    public @ResponseBody users login(@RequestBody users u) {
+    public @ResponseBody
+    user login(@RequestBody user u) {
         System.out.println(u);
 
         return userService.login(u.getEmail(), u.getPassword());
+    }
+    @PostMapping("/users/Sign_up")
+    public @ResponseBody
+    user Sign_up(@RequestBody user u) {
+        System.out.println(u);
+
+        return userService.Sign_up(u);
     }
 }
