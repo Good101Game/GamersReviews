@@ -34,19 +34,18 @@ public class usersServices {
         return new user();
     }
 
-    public user Sign_up(user u) {
-      //  System.out.println("id: " + id + " Name: " + Name + " Email: " + email + " password: " + password);
+    public user Sign_up(String Name, String email, String password) {
+      System.out.println(" Name: " + Name + " Email: " + email + " password: " + password);
 
         List<user> all = getAllUsers();
         for (user existingUser : all) {
-            if (existingUser.getEmail().equals(u.getEmail())) {
+            if (existingUser.getEmail().equals(email)) {
                 return null;
             }
         }
-        //user newUser = new user(id, Name, email, password);
-        addUser(u);
+        user newUser = new user(Name, email, password);
 
-        return u;
+        return newUser;
     }
 
 }

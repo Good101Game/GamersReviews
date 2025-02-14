@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api") // Base mapping for all endpoints in this controller
 public class usersController {
 
     @Autowired
@@ -36,11 +35,11 @@ public class usersController {
 
         return userService.login(u.getEmail(), u.getPassword());
     }
-    @PostMapping("/users/Sign_up")
+    @PostMapping("/users/Signup")
     public @ResponseBody
     user Sign_up(@RequestBody user u) {
         System.out.println(u);
 
-        return userService.Sign_up(u);
+        return userService.Sign_up(u.getName(), u.getEmail(), u.getPassword());
     }
 }

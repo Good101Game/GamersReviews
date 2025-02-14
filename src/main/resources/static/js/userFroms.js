@@ -43,7 +43,7 @@
             };
             $.ajax({
                 type: "POST",
-                url: "/users/Sign_up",
+                url: "/users/Signup",
                 contentType: "application/json",
                 data: JSON.stringify(newUser),
                 success: function (newUser) {
